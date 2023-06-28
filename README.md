@@ -1,5 +1,5 @@
-# SQL-Injection-Training-Lab-notes
-SQL Injection Training Lab notes for myself
+# SQL Injection Training Lab notes
+SQL Injection Training Lab notes for me
 
 ## Level A - Basic GET SQL Injection
 - common payload untuk sqli `'` `"` `\` `)'` `}'` `\'` untuk test web injectable
