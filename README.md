@@ -4,7 +4,7 @@ SQL Injection Training Lab notes for me (Malay Language)
 :warning: **Only for Educational Purpose.**
 
 - notes:
-  1. Common Payload untuk test SQLI pada web URL `'`, `"`, `\`, `)'`, `}'`, `\'`, jika berlaku Error Page bermaksud Web itu Injectable.
+  1. Common Payload untuk test SQLI pada web URL `'`, `"`, `\`, `)'`, `}'`, `\'`, jika berlaku Error Page bermaksud Web itu Vulnerable.
   2. Untuk method `Blind Base` Error Page tidak keluar sebarang paparan tetapi Page menjadi blank.
   3. `--` ini adalah cmd komen untuk SQL.
   4. `+` ini adalah cmd space untuk URL Browser.
