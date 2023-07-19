@@ -1,6 +1,14 @@
 # SQL Injection Training Lab notes
 SQL Injection Training Lab notes for me
 
+## Table of contents
+- [Level A - Basic GET SQL Injection](#level-a---basic-get-sql-injection)
+- [Level B - Basic POST SQL Injection](#level-b---basic-post-sql-injection)
+- [Level C - POST Bypass Auth](#level-c---post-bypass-auth)
+- [Level D - GET Blind Based](#level-d---get-blind-based)
+- [Level E - Base64 GET SQL Injection](#level-e---base64-get-sql-injection)
+- [Level H - Cookie Base SQL Injection](#level-h---cookie-base-sql-injection)
+
 ## Level A - Basic GET SQL Injection
 - common payload untuk sqli `'` `"` `\` `)'` `}'` `\'` untuk test web injectable
 - note: jika `blind base` page tidak keluar error page tapi page menjadi blank
