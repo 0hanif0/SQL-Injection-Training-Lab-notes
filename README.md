@@ -17,6 +17,8 @@ SQL Injection Training Lab notes for me (Malay Language)
 - [Level D - GET Blind Based](#level-d---get-blind-based)
 - [Level E - Base64 GET SQL Injection](#level-e---base64-get-sql-injection)
 - [Level H - Cookie Base SQL Injection](#level-h---cookie-base-sql-injection)
+- [Level I - Bypass AddSlashes SQL Injection](#level-i---bypass-addslashes-sql-injection)
+- [Level J - Bypass Real Escape String](#level-j---bypass-real-escape-string)
 
 ## Level A - Basic GET SQL Injection
 - Gambar dibawah adalah contoh jika berlaku Error Page selepas menggunakan Payload `'` == `single quote`.
@@ -187,5 +189,41 @@ SQL Injection Training Lab notes for me (Malay Language)
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/d1bb83ee-4f2c-4f67-97e8-848717a43582)
 
 - Step seterusnya sama dengan level yang lain.
+
+- Done!
+
+## Level I - Bypass AddSlashes SQL Injection
+
+- Dengan Payload ini `'` menyebabkan Escape String berlaku disini. Seterusnya gunakan [Hex to String](https://codebeautify.org/hex-string-converter) dan convert `bf5c27` akan keluar char pelik yang boleh digunakan pada Payload seterusnya.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/e858813b-197b-4d53-bb60-e765fe22811f)
+
+- Ini adalah char pelik yang boleh digunakan pada Payload seterusnya.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/ef12408e-5210-4828-acda-c68117f45c2f)
+
+- Payload `%bf%5c%27` untuk test Error Page.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/bc754dd3-dc64-4ee7-a34f-ce79e5fe5286)
+
+- Payload `%bf%5c%27--+` Web menjadi normal dan Web mempunyai Vuln.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/abb0d5be-1c1a-483a-aff8-81c2ec5cf34d)
+
+- Payload `%bf%5c%27order+by+6--+` untuk mencari berapa Col yang ada dalam DB tersebut, contoh 6 berlaku Error Page bermaksud DB ini mempunyai 5 Col.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/b686d968-8000-4a76-8bb6-7bf976aa9015)
+
+- Payload `?id=-1%bf%5c%27union+all+select+1,2,3,4,5--+` untuk tengok Username dan Email dikeluarkan berada di col no berapa, berdasarkan gambar bawah Username terletak di col 2 dan Email terletak di col 3, `2,3` boleh replace dengan code yang lain.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/7b0181a8-e547-4bd0-a1b7-0325001c6211)
+
+- Step seterusnya sama dengan level yang lain.
+
+- Done!
+
+## Level J - Bypass Real Escape String
+
+- Semua step sama macam [Level I - Bypass AddSlashes SQL Injection](#level-i---bypass-addslashes-sql-injection)
 
 - Done!
