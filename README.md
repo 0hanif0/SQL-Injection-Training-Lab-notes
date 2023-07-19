@@ -186,6 +186,6 @@ SQL Injection Training Lab notes for me (Malay Language)
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/d1bb83ee-4f2c-4f67-97e8-848717a43582)
 
-- Step seterunya sama dengan level yang lain.
+- Step seterusnya sama dengan level yang lain.
 
 - Done!
