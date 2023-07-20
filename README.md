@@ -1,4 +1,4 @@
-![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/53901f93-1665-4cb6-804b-23ddc0d00d44)# SQL Injection Training Lab notes
+# SQL Injection Training Lab notes
 SQL Injection Training Lab notes for me (Malay Language) 
 
 :warning: **Only for Educational Purpose.**
